@@ -1,11 +1,19 @@
 CC = gcc
+
 CFLAGS = -Wall -Iinclude -g
+
 TARGET = bin/product_program
+
 SRCDIR = src
+
 OBJDIR = obj
+
 INCDIR = include
+
 SOURCES = $(wildcard $(SRCDIR)/*.c)
+
 OBJECTS = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SOURCES))
+
 all: $(TARGET)
 $(TARGET): $(OBJECTS) | bin
 	$(CC) $^ -o $@

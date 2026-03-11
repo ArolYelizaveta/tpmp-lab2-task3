@@ -1,9 +1,9 @@
 /*
- * Author: [Your Name]
- * Group: [Your Group]
+ * Author: Orel Elizaveta
+ * Group: 13
  * File: product.h
- * Description: Header file with definition of structures and function prototypes
- *              for working with products (variant 16).
+ * Description: Заголовочный файл с определением структур и прототипов функций
+ *              для работы с товарами (вариант 16).
  */
 
 #ifndef PRODUCT_H
@@ -14,12 +14,20 @@
 #include <string.h>
 #include <time.h>
 
+/*
+ * Структура для представления даты (год, месяц, день).
+ */
 typedef struct {
     int year;
     int month;
     int day;
 } Date;
 
+/*
+ * Структура товара.
+ * Поля: наименование, цена, дата производства, срок годности,
+ *       количество, производитель.
+ */
 typedef struct {
     char name[100];
     double price;
@@ -29,13 +37,21 @@ typedef struct {
     char manufacturer[100];
 } Product;
 
+
 int date_compare(Date d1, Date d2);
+
 Date get_current_date(void);
+
 void input_products(Product *products, int *count);
+
 void print_product(const Product *p);
+
 void sort_by_production_date(Product *products, int count);
+
 void print_expiring_soon(const Product *products, int count, Date current_date);
+
 void print_manufacturer_counts(const Product *products, int count);
+
 void print_max_price_not_expired(const Product *products, int count, Date current_date);
 
-#endif /* PRODUCT_H */
+#endif

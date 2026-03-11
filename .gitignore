@@ -1,0 +1,18 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+bin/
+
+# Build directories
+obj/
+
+# Editor temporary files
+*~
+*.swp
+*.swo
+.DS_Store
